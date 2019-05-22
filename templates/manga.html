@@ -88,6 +88,23 @@
 		.custom-most-popular:hover{
 			background-color:rgba(0,0,0,.08);
 		}
+		.pagination-div{
+			margin: 40px auto 20px;
+			text-align: center;
+		}
+		.pagination-page{
+			background: #2196f3;
+	    padding: 10px;
+	    color: #ffffff;
+	    margin-right: 5px;
+	    box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);
+		}
+		#pagination-current-page{
+			background: rgba(0,0,0,.08);
+			padding: 10px;
+			color: rgba(0,0,0, .87);
+			margin-right: 5px;
+		}
 		</style>
 
 
@@ -173,7 +190,7 @@
               				<div class="_1xNP7"><a href="#" class="_2dU-m">View All</a></div>
               			</div>
 
-              			<div class="_2N9Wz _2aLs0">
+              			<div class="_2N9Wz _2aLs0"  style="margin-left:-8px; margin-right:-8px;">
 
 											{% for manga in all_manga %}
               				<div class="_2JUQV _2vjsG">
@@ -204,41 +221,41 @@
 
 
 											<!-- Pagination Code -->
-											<div class="phan-trang">
-											  <div class="group-page">
-											    <a href="{{url_for('manga', page = 1)}}" class="page page-blue">
+											<div class="pagination-div">
+											  <div>
+											    <a href="{{url_for('manga', page = 1)}}" class="page-blue pagination-page">
 											      First(1)
 											    </a>
 
 											    {% if first_prev_page != 0 %}
-											      <a href="{{url_for('manga', page=first_prev_page)}}" class="page">
+											      <a href="{{url_for('manga', page=first_prev_page)}}" class="pagination-page">
 											        {{first_prev_page}}
 											      </a>
 											    {% endif %}
 
 											    {% if second_prev_page != 0 %}
-											      <a href="{{url_for('manga', page=second_prev_page)}}" class="page">
+											      <a href="{{url_for('manga', page=second_prev_page)}}" class="pagination-page">
 											        {{second_prev_page}}
 											      </a>
 											    {% endif %}
 
-											    <a class="pageselect">
+											    <a id="pagination-current-page">
 											      {{current_page}}
 											    </a>
 
 											    {% if first_next_page != 0 %}
-											      <a href="{{url_for('manga', page=first_next_page)}}" class="page">
+											      <a href="{{url_for('manga', page=first_next_page)}}" class="pagination-page">
 											        {{first_next_page}}
 											      </a>
 											    {% endif %}
 
 											    {% if second_next_page != 0 %}
-											      <a href="{{url_for('manga', page=second_next_page)}}" class="page">
+											      <a href="{{url_for('manga', page=second_next_page)}}" class="pagination-page">
 											        {{second_next_page}}
 											      </a>
 											    {% endif %}
 
-											    <a href="{{url_for('manga', page=total_page_number)}}" class="page page-blue">
+											    <a href="{{url_for('manga', page=total_page_number)}}" class="pagination-page">
 											      Last({{total_page_number}})
 											    </a>
 											  </div>
