@@ -588,15 +588,14 @@
 														{{popular_manga_list[x]['title']}}
 													</a>
               						<div class="_2n7zq" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;    color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
+														{% for author in {{popular_manga_list[x]['author']}} %}
 														<a href="#" class="nm9NF _1n9jm" style="    color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
-															<span itemprop="name">Mad Snail</span>
+															<span itemprop="name">{{ author }}</span>
 														</a>
 														<span>, </span>
-														<a href="#" class="nm9NF _1n9jm" style="    color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
-															<span itemprop="name">Jiang Ruotai</span>
-														</a>
+														{% endfor %}
 													</div>
-              						<div class="_2ENa0" style="    color: rgba(0,0,0,.54);font-size: .875rem;font-weight: 400;line-height: 16px;white-space: nowrap;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;">{{popular_manga_list[x]['status']}}, 354 chapters</div>
+              						<div class="_2ENa0" style="    color: rgba(0,0,0,.54);font-size: .875rem;font-weight: 400;line-height: 16px;white-space: nowrap;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;">{{popular_manga_list[x]['status']}}</div>
               					</div>
               				</div>
 											{% endfor %}
@@ -615,208 +614,35 @@
 
 
 									<!-- being read right now section -->
-              		<div class="_2bD1y _3Ha1l _3lZHb" style="margin-top: 32px;">
+              		<!-- <div class="_2bD1y _3Ha1l _3lZHb" style="margin-top: 32px;">
               			<div class="_3_XVY block-title">
               				<div class="_1C6eI _3D28I">BEING READ RIGHT NOW</div>
               			</div>
               			<div class="JhQix">
 
-              				<div class="_3_p1R _2gOER custom-most-popular" style="margin-top: -12px; margin-bottom:12px;display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    padding-left: 20px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-radius: 2px;
-		overflow:hidden;">
-              					<a href="#" alt="Hero? I Quit A Long Time Ago" class="_2dU-m _1XGas" style="margin-right: 16px;
-    width: 20%;
-    max-width: 80px;
-    display: block;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;">
-              						<div class="xDVZZ _1ZDIR" style="border-radius: 0px;    width: 100%;
-    padding-bottom: 150%;
-    height: 0; position:relative;">
-              							<div class="_3H61R" style="border-radius: 0px;position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    z-index: 2;    display: block;
-    width: 100%;"></div>
-              							<img src="https://f01.mrcdn.info/file/mrportal/i/2/8/8/yn.keiVfTCN.jpg" alt="Hero? I Quit A Long Time Ago" class="hGq41 _2NsiO" style="position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;">
+              				<div class="_3_p1R _2gOER custom-most-popular" style="margin-top: -12px; margin-bottom:12px;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-line-pack: center;align-content: center;-webkit-box-align: center;ms-flex-align: center;align-items: center;width: 100%;-webkit-box-pack: start;-ms-flex-pack: start;justify-content: flex-start;padding-left: 20px;padding-top: 12px;padding-bottom: 12px;border-radius: 2px;overflow:hidden;">
+              					<a href="#" alt="Hero? I Quit A Long Time Ago" class="_2dU-m _1XGas" style="margin-right: 16px;width: 20%;max-width: 80px;display: block;-webkit-box-flex: 0;-ms-flex: 0 0 20%;flex: 0 0 20%;">
+              						<div class="xDVZZ _1ZDIR" style="border-radius: 0px;    width: 100%;padding-bottom: 150%;height: 0; position:relative;">
+              							<div class="_3H61R" style="border-radius: 0px;position: absolute;left: 0;top: 0;height: 100%;-webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);z-index: 2;    display: block;width: 100%;"></div>
+              							<img src="https://f01.mrcdn.info/file/mrportal/i/2/8/8/yn.keiVfTCN.jpg" alt="Hero? I Quit A Long Time Ago" class="hGq41 _2NsiO" style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;-o-object-fit: cover;object-fit: cover;">
               						</div>
               					</a>
               					<div class="qwhrf">
-              						<a href="#" class="_2dU-m _1N0YK" style="color: rgba(0,0,0,.87);
-    font-size: 16px;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 19px;
-    display: inline-block;
-    display: -webkit-box;
-    max-height: 38px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    margin-bottom: 2px;">Hero? I Quit A Long Time Ago</a>
+              						<a href="#" class="_2dU-m _1N0YK" style="color: rgba(0,0,0,.87);font-size: 16px;font-size: 1rem;font-weight: 500;line-height: 19px;display: inline-block;display: -webkit-box;max-height: 38px;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;margin-bottom: 2px;">Hero? I Quit A Long Time Ago</a>
               						<div class="_2n7zq" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
+														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
 															<span itemprop="name">SF Light Novels</span>
 														</a>
 														<span>, </span>
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
+														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
 															<span itemprop="name">Hai Luo</span>
 														</a>
 														<span>, </span>
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
+														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;">
 															<span itemprop="name">Wu Liao Kan Kan Tian</span>
 														</a>
 													</div>
-              						<div class="_2ENa0" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;">Ongoing, 71 chapters</div>
-              					</div>
-              				</div>
-
-
-
-
-											<div class="_3_p1R _2gOER custom-most-popular" style="margin-top: -12px; margin-bottom:12px;display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    padding-left: 20px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-radius: 2px;
-		overflow:hidden;">
-              					<a href="#" alt="Hero? I Quit A Long Time Ago" class="_2dU-m _1XGas" style="margin-right: 16px;
-    width: 20%;
-    max-width: 80px;
-    display: block;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;">
-              						<div class="xDVZZ _1ZDIR" style="border-radius: 0px;    width: 100%;
-    padding-bottom: 150%;
-    height: 0; position:relative;">
-              							<div class="_3H61R" style="border-radius: 0px;position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    z-index: 2;    display: block;
-    width: 100%;"></div>
-              							<img src="https://f01.mrcdn.info/file/mrportal/i/2/8/8/yn.keiVfTCN.jpg" alt="Hero? I Quit A Long Time Ago" class="hGq41 _2NsiO" style="position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;">
-              						</div>
-              					</a>
-              					<div class="qwhrf">
-              						<a href="#" class="_2dU-m _1N0YK" style="color: rgba(0,0,0,.87);
-    font-size: 16px;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 19px;
-    display: inline-block;
-    display: -webkit-box;
-    max-height: 38px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    margin-bottom: 2px;">Hero? I Quit A Long Time Ago</a>
-              						<div class="_2n7zq" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
-															<span itemprop="name">SF Light Novels</span>
-														</a>
-														<span>, </span>
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
-															<span itemprop="name">Hai Luo</span>
-														</a>
-														<span>, </span>
-														<a href="#" class="nm9NF _1n9jm" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;">
-															<span itemprop="name">Wu Liao Kan Kan Tian</span>
-														</a>
-													</div>
-              						<div class="_2ENa0" style="color: rgba(0,0,0,.54);
-    font-size: 14px;
-    font-size: .875rem;
-    font-weight: 400;
-    line-height: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;">Ongoing, 71 chapters</div>
+              						<div class="_2ENa0" style="color: rgba(0,0,0,.54);font-size: 14px;font-size: .875rem;font-weight: 400;line-height: 16px;white-space: nowrap;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;">Ongoing, 71 chapters</div>
               					</div>
               				</div>
 
@@ -825,7 +651,7 @@
 
 
               			</div>
-              		</div>
+              		</div> -->
 									<!-- being read right now section end here -->
 
 
