@@ -431,8 +431,8 @@
               								</div>
               							</div>
 
-														{% for x in range(0,3) %}
 														<div class="col-sm-5 ikcDo">
+															{% for x in range(0,3) %}
 															<div class="e6dEC">
 																<div class="_3BG6K _3Lldd" style="width: 8px; height: 8px;"></div>
 												            {% if latest_manga_releases_chapter_list[latest_mange_releases.index(manga)] %}
@@ -441,13 +441,15 @@
 												              </a>
 												            {% endif %}
 															</div>
+															{% endfor %}
               							</div>
 												    <div class="col-sm-2 ikcDo _2t82X">
+															{% for x in range(0,3) %}
 												          {% if latest_manga_releases_chapter_list[latest_mange_releases.index(manga)] %}
 												            {{latest_manga_releases_chapter_list[latest_mange_releases.index(manga)]['chapter_time_uploaded'][x]}}
 												          {% endif %}
+															{% endfor %}
 										       	</div>
-												    {% endfor %}
               							<!-- <div class="col-sm-5 ikcDo">
               								<div class="e6dEC">
               									<div class="_3BG6K _3Lldd" style="width: 8px; height: 8px;"></div>
