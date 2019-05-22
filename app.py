@@ -82,7 +82,7 @@ def manga():
     total_manga = len(list(items.find()))
 
     #getting total page number
-    offset = 25
+    offset = 50
     page_number = total_manga / offset
     if total_manga % offset == 0:
         total_page_number = int(str(page_number).split('.')[0])
@@ -135,8 +135,8 @@ def manga():
         second_next_page = 5
     #pagination code ends here
 
-    page_offset = (current_page-1) * 25
-    limit = 25
+    page_offset = (current_page-1) * 50
+    limit = 50
 
     starting_manga_id = items.find().sort('_id', pymongo.ASCENDING)
     last_manga_id = starting_manga_id[page_offset]['_id']

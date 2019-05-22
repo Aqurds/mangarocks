@@ -213,12 +213,13 @@
 														{{manga['title']}}
 													</a>
 												</div>
-
+												{% for author in manga['author'] %}
               					<a href="#" style="display: flex;color: rgba(0,0,0,.54);font-size: .875rem;font-weight: 400;line-height: 16px;">
-              						<div>
-              							<div class="_3BG6K Wc1vZ" style="width: 8px; height: 8px; display:inline-block;margin-right:4px;background-color: #2196f3;border-radius: 50%;box-sizing: content-box;"></div>
-              						</div>
-              						<div class="vS4Dq">Chapter 72</div>
+              						<div class="vS4Dq">{{author}}, </div>
+              					</a>
+												{% endfor %}
+												<a href="#" style="display: flex;color: rgba(0,0,0,.54);font-size: .875rem;font-weight: 400;line-height: 16px;">
+              						<div class="vS4Dq">{{manga['status']}}</div>
               					</a>
               				</div>
 											{% endfor %}
