@@ -125,8 +125,13 @@
 								<div class="J9pTc">
 									<a href="index.html" class="_2dU-m adDbz"><img src="../static/images/manga-rock-logo.svg" alt="Manga Rock Logo"/></a>
 									<div class="_17qVc">
-										<a href="index.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">HOME</a><a href="manga.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">ALL MANGA</a><a href="manga/latest.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">LATEST UPDATES</a>
-										<div class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG" id="header_wiki">WIKI<i class="material-icons">arrow_drop_down</i></div>
+										<a href="{{ url_for('home') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">HOME</a>
+										<a href="{{ url_for('manga', page=1) }}" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">ALL MANGA</a>
+										<a href="manga/latest.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">LATEST UPDATES</a>
+										<div class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG" id="header_wiki">
+											WIKI
+											<i class="material-icons">arrow_drop_down</i>
+										</div>
 										<ul data-mdl-for="header_wiki" class="mdl-menu mdl-js-menu mdl-menu--bottom-left mdl-js-ripple-effect TCceY">
 											<li class="mdl-menu__item _1jr8T">
 												<div class="_1JgQU">All Genres</div>
@@ -186,14 +191,11 @@
 									<!-- All manga list section -->
               		<div class="_2bD1y" style="margin-bottom: 32px;">
 
-              			<div class="_3S-cc _3FgEi" style="color:#ff9800;font-size: 1rem;font-weight: 400;line-height: 24px;color: #ff9800; margin-bottom:-8px;">
-											In the last few hours {{ total_manga}}
-										</div>
+										<div class="_3_XVY m-b-20"><div class="_1C6eI _2Z5sk">Latest Updates</div></div>
 
-              			<div class="_3_XVY block-title">
-              				<div class="_1C6eI _3D28I">Trending Updates</div>
-              				<div class="_1xNP7"><a href="#" class="_2dU-m">View All</a></div>
-              			</div>
+              			<div class="_3S-cc _3FgEi" style="color:rgba(0,0,0,.87);font-size: 1rem;font-weight: 400;line-height: 24px;color: #ff9800; margin-bottom:-8px;">
+											{{ total_manga}} manga
+										</div>
 
               			<div class="_2N9Wz _2aLs0"  style="margin-left:-8px; margin-right:-8px;">
 

@@ -103,8 +103,15 @@
 								<div class="J9pTc">
 									<a href="index.html" class="_2dU-m adDbz"><img src="../static/images/manga-rock-logo.svg" alt="Manga Rock Logo"/></a>
 									<div class="_17qVc">
-										<a href="index.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">HOME</a><a href="manga.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">ALL MANGA</a><a href="manga/latest.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">LATEST UPDATES</a>
-										<div class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG" id="header_wiki">WIKI<i class="material-icons">arrow_drop_down</i></div>
+										<a href="{{ url_for('home') }}" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">HOME</a>
+										<a href="{{ url_for('manga', page=1) }}" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">ALL MANGA</a>
+										<a href="manga/latest.html" class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG">LATEST UPDATES</a>
+										<div class="mdl-button mdl-js-button mdl-js-ripple-effect _2qQcG" id="header_wiki">
+											WIKI
+											<i class="material-icons">
+												arrow_drop_down
+											</i>
+										</div>
 										<ul data-mdl-for="header_wiki" class="mdl-menu mdl-js-menu mdl-menu--bottom-left mdl-js-ripple-effect TCceY">
 											<li class="mdl-menu__item _1jr8T">
 												<div class="_1JgQU">All Genres</div>
