@@ -98,6 +98,11 @@
 	    color: #ffffff;
 	    margin-right: 5px;
 	    box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);
+			transition: all .5s;
+		}
+		.pagination-page:hover{
+	    color: #ffffff;
+	    box-shadow: 0 0 2px 0 rgba(0,0,0,.80), 0 2px 3px 0 rgba(0,0,0,.2);
 		}
 		#pagination-current-page{
 			background: rgba(0,0,0,.08);
@@ -182,7 +187,7 @@
               		<div class="_2bD1y" style="margin-bottom: 32px;">
 
               			<div class="_3S-cc _3FgEi" style="color:#ff9800;font-size: 1rem;font-weight: 400;line-height: 24px;color: #ff9800; margin-bottom:-8px;">
-											In the last few hours
+											In the last few hours {{ total_manga}}
 										</div>
 
               			<div class="_3_XVY block-title">
@@ -257,12 +262,6 @@
 
 											    <a href="{{url_for('manga', page=total_page_number)}}" class="pagination-page">
 											      Last({{total_page_number}})
-											    </a>
-											  </div>
-											  <div class="group-qty">
-											    <a class="quantitychapter page-blue">
-											      Total: {{ total_manga}} stories
-											      {{page}}
 											    </a>
 											  </div>
 											</div>
