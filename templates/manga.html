@@ -177,11 +177,9 @@
 
 											{% for manga in all_manga %}
               				<div class="_2JUQV _2vjsG">
-              					<div class="_3z9H4 _3wYfS _1XJv2" style="height: 28px;min-width: 28px;padding-left: 6px;padding-right: 6px;font-size: 18px;display: inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-line-pack: center;align-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;font-weight: 500;color: #fff;background:#ff5722; width: auto; border-radius: 4px; cursor: default; white-space: nowrap; z-index: 3; position: absolute; right: 0; top: 0;">
-													2
-												</div>
+
               					<a href="#" class="_2dU-m _1iAGN">
-              						<div class="xDVZZ _5STbZ" style="border-radius: 0px; height:235px;">
+              						<div class="xDVZZ _5STbZ" style="border-radius: 0px; height:235px; margin-bottom:12px;">
               							<div class="_3H61R" style="border-radius: 0px;"></div>
               							<img src="{{manga['image']}}" alt="{{manga['title']}}" class="hGq41 _2NsiO">
               						</div>
@@ -202,6 +200,57 @@
               					</a>
               				</div>
 											{% endfor %}
+
+
+
+											<!-- Pagination Code -->
+											<div class="phan-trang">
+											  <div class="group-page">
+											    <a href="{{url_for('manga', page = 1)}}" class="page page-blue">
+											      First(1)
+											    </a>
+
+											    {% if first_prev_page != 0 %}
+											      <a href="{{url_for('manga', page=first_prev_page)}}" class="page">
+											        {{first_prev_page}}
+											      </a>
+											    {% endif %}
+
+											    {% if second_prev_page != 0 %}
+											      <a href="{{url_for('manga', page=second_prev_page)}}" class="page">
+											        {{second_prev_page}}
+											      </a>
+											    {% endif %}
+
+											    <a class="pageselect">
+											      {{current_page}}
+											    </a>
+
+											    {% if first_next_page != 0 %}
+											      <a href="{{url_for('manga', page=first_next_page)}}" class="page">
+											        {{first_next_page}}
+											      </a>
+											    {% endif %}
+
+											    {% if second_next_page != 0 %}
+											      <a href="{{url_for('manga', page=second_next_page)}}" class="page">
+											        {{second_next_page}}
+											      </a>
+											    {% endif %}
+
+											    <a href="{{url_for('manga', page=total_page_number)}}" class="page page-blue">
+											      Last({{total_page_number}})
+											    </a>
+											  </div>
+											  <div class="group-qty">
+											    <a class="quantitychapter page-blue">
+											      Total: {{ total_manga}} stories
+											      {{page}}
+											    </a>
+											  </div>
+											</div>
+											<!-- Pagination code ends -->
+
 
 
 
