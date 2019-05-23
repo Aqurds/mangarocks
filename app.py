@@ -189,5 +189,87 @@ def manga():
 
 
 
+
+@app.route('/manga-id/<string:manga_id>')
+def manga_id(manga_id):
+    # manga_id = request.url.split('/')[-1]
+    manga_id = manga_id
+    manga_details = mongo.db.all_manga_details.find_one({'id':manga_id})
+    manga_chapter_list = mongo.db.manga_chapter_list.find_one({'manga_id':manga_id})
+
+    # collecting each manga details in a single list with iteration. This code looking pretty complex. I will try to optimize this code later.
+    manga_id_here = manga_chapter_list['manga_id']
+    iteration = len(manga_chapter_list['chapter_id'])
+    chapter_list = []
+    for x in range(iteration):
+        chapter_list.append([manga_chapter_list['chapter_id'][x]])
+
+    for x in range(iteration):
+        chapter_list[x].append(manga_chapter_list['full_chapter_url'][x])
+
+    for x in range(iteration):
+        chapter_list[x].append(manga_chapter_list['chapter_link_text'][x])
+
+    for x in range(iteration):
+        chapter_list[x].append(manga_chapter_list['chapter_time_uploaded'][x])
+
+    #store the manga id in users document for history page
+    if session:
+        user_name = session['username']
+        users = mongo.db.users
+        history_data = users.find_one({'name':user_name})
+
+        if 'history' not in history_data:
+            users.update_one({'name': user_name}, {'$push': {'history':''}})
+
+        history_data_again = users.find_one({'name':user_name})
+        if manga_id not in history_data_again['history']:
+            users.update_one({'name': user_name}, {'$push': {'history': manga_id}})
+
+
+    #popular manga view
+    front_page_manga = list(mongo.db.update_spider.find())
+    popular_manga_list = []
+
+    for item in front_page_manga[0]['popular_manga']:
+        # popular_manga_list.append(list(mongo.db.all_manga_details.find_one({'id':item})))
+        popular_manga_list.append(mongo.db.all_manga_details.find_one({'id':item}))
+
+
+    #most popular manga view
+    most_popular_front_page_manga = list(mongo.db.update_spider.find())
+    most_popular_manga = []
+
+    for item in most_popular_front_page_manga[0]['most_popular_manga']:
+        most_popular_manga.append(mongo.db.all_manga_details.find_one({'id':item}))
+
+    # genres & categories to show in sidebar
+    genres_categories = list(mongo.db.genres_categories.find())
+    genres = genres_categories[0]['genres']
+    categories = genres_categories[0]['categories']
+
+    # counting bookmark number to show in the menu
+    total_bookmark = 0
+    if session:
+        user_name = session['username']
+        users = mongo.db.users
+        bookmark_id = users.find_one({'name':user_name})
+
+        if 'bookmark' in bookmark_id:
+            total_bookmark = len(bookmark_id['bookmark']) - 1
+
+    return render_template('manga-id.html', manga_details = manga_details, chapter_list = chapter_list, manga_id_here = manga_id_here, popular_manga_list=popular_manga_list, most_popular_manga=most_popular_manga, genres=genres, categories=categories, total_bookmark=total_bookmark)
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
