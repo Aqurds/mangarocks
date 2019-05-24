@@ -173,13 +173,7 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-12 col-lg-8">
-										<div class="_2bD1y" style="background-color: #fff;
-    padding: 20px;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);
-    box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);
-    margin-bottom: 20px;
-    position: relative;">
+										<div class="_2bD1y" style="background-color: #fff;padding: 20px;border-radius: 2px;-webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);box-shadow: 0 0 2px 0 rgba(0,0,0,.08), 0 2px 3px 0 rgba(0,0,0,.2);margin-bottom: 20px;position: relative;">
 
 											<div class="_3sxPa">
 
@@ -225,87 +219,40 @@
 											</div>
 
 
-											<div class="iooC4" style="display: flex;
-    margin-left: -20px;">
-												<div class="_27em5" style="position: relative;
-    width: 290px;
-    height: 250px;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;box-sizing: inherit;">
-													<div class="_3Aef5" style="padding: 20px 20px 0;
-    width: 290px;
-    height: 395px;
-    margin-top: -150px;
-    background-color: #fff;box-sizing: inherit;">
-														<div class="xDVZZ _2KER_" style="border-radius: 0px;width: 100%!important;
-    height: 100%!important;    display: block;    background-color: #eee;
-    position: relative;box-sizing: inherit;">
-															<div class="_3H61R" style="border-radius: 0px;position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    -webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-    z-index: 2;    display: block;
-    width: 100%;box-sizing: inherit;"></div>
-															<img src="{{manga_details['image']}}" alt="One Punch-Man" class="hGq41 _2NsiO" style="    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;vertical-align: middle;    border-style: none;">
+											<div class="iooC4" style="display: flex;margin-left: -20px;">
+												<div class="_27em5" style="position: relative;width: 290px;height: 250px;-ms-flex-negative: 0;flex-shrink: 0;box-sizing: inherit;">
+													<div class="_3Aef5" style="padding: 20px 20px 0;width: 290px;height: 395px;margin-top: -150px;background-color: #fff;box-sizing: inherit;">
+														<div class="xDVZZ _2KER_" style="border-radius: 0px;width: 100%!important;height: 100%!important;display: block;background-color: #eee;position: relative;box-sizing: inherit;">
+															<div class="_3H61R" style="border-radius: 0px;position: absolute;left: 0;top: 0;height: 100%;-webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);z-index: 2;    display: block;width: 100%;box-sizing: inherit;"></div>
+															<img src="{{manga_details['image']}}" alt="One Punch-Man" class="hGq41 _2NsiO" style="    position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;-o-object-fit: cover;object-fit: cover;vertical-align: middle;    border-style: none;">
 														</div>
 													</div>
 												</div>
-												<div class="_2oeki" style="display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    max-width: calc(100% - 290px);">
+												<div class="_2oeki" style="display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;max-width: calc(100% - 290px);">
 													<!-- manga title -->
 													<h1 class="_1_8ki" itemprop="name headline">{{manga_details['title']}}</h1>
 													<!-- manga author -->
 													<div class="_24MiA">
-														<a href="/author/mrs-author-311080" title="Yusuke Murata" class="_2dU-m _7ma7j">
-															<span itemprop="name">Yusuke Murata</span>
+														{% for author in manga_details['author'] %}
+														<a href="#" title="Yusuke Murata" class="_2dU-m _7ma7j">
+															<span itemprop="name">{{author}}</span>
 														</a>
 														<span>, </span>
-														<a href="/author/mrs-author-330121" title="ONE" class="_2dU-m _7ma7j">
-															<span itemprop="name">ONE</span>
-														</a>
+														{% endfor %}
 													</div>
 													<!-- manga status -->
-													<div class="_2jVBw"><span>Ongoing</span><span> | </span><span>135 chapters</span></div>
+													<div class="_2jVBw"><span>{{manga_details['status']}}</span></div>
 
 
-													<div class="mucz_" style="    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    margin-top: auto;">
-														<a href="/manga/mrs-serie-358279/chapter/first" class="kRad2" style="margin-left: auto;
-    width: 166px;color: rgba(0,0,0,.87);
-    text-decoration: none;background-color: transparent;">
+													<div class="mucz_" style="display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;width: 100%;margin-top: auto;">
+														<a href="/manga/mrs-serie-358279/chapter/first" class="kRad2" style="margin-left: auto;width: 166px;color: rgba(0,0,0,.87);text-decoration: none;background-color: transparent;">
 															<div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored _1WoPX" style="width: 100%; background-color: rgb(33, 150, 243);" data-upgraded=",MaterialButton,MaterialRipple">
 																<div class="_1ulUU"><span>Start Reading</span></div>
 																<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
 															</div>
 														</a>
 														<div class="mdl-tooltip--wrapper" style="display: flex; z-index: 999;">
-															<div class="_21fR6" id="wbsrzm9owp" tabindex="0" style="position: absolute;
-    right: 45px;
-    top: 10px;">
+															<!-- <div class="_21fR6" id="wbsrzm9owp" tabindex="0" style="position: absolute;right: 45px;top: 10px;">
 																<label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="wwd71" style="width: 32px; height: 32px;" data-upgraded=",MaterialIconToggle,MaterialRipple">
 																	<input id="wwd71" type="checkbox" class="mdl-icon-toggle__input" style="display: none; width: 32px; height: 32px; min-width: 32px; line-height: 32px;">
 																	<i class="material-icons mdl-icon-toggle__label" style="font-size: 24px; line-height: 32px; width: 32px; height: 32px;">favorite_border</i>
@@ -313,7 +260,7 @@
 																		<span class="mdl-ripple"></span>
 																	</span>
 																</label>
-															</div>
+															</div> -->
 															<span for="wbsrzm9owp" class="mdl-tooltip mdl-tooltip--bottom" data-upgraded=",MaterialTooltip">Add to Favorites</span>
 														</div>
 													</div>
