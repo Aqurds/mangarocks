@@ -185,7 +185,7 @@
 											{% for x in range (0,5) %}
               				<div class="_2JUQV _2vjsG">
               					<div class="_3z9H4 _3wYfS _1XJv2" style="height: 28px;min-width: 28px;padding-left: 6px;padding-right: 6px;font-size: 18px;display: inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-ms-flex-line-pack: center;align-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;font-weight: 500;color: #fff;background:#ff5722; width: auto; border-radius: 4px; cursor: default; white-space: nowrap; z-index: 3; position: absolute; right: 0; top: 0;">
-													2
+													1
 												</div>
               					<a href="{{url_for('manga_id', manga_id = popular_manga_list[x]['id'])}}" class="_2dU-m _1iAGN">
               						<div class="xDVZZ _5STbZ" style="border-radius: 0px; height:235px;">
@@ -418,14 +418,14 @@
               							<div class="col-md-5 col-12 _10ryi">
               								<div>
               									<div class="_1bJU3">
-              										<a href="#" class="_2dU-m">
+              										<a href="{{url_for('manga_id', manga_id = manga['id'])}}" class="_2dU-m">
               											<div class="xDVZZ Qy4Xf" style="border-radius: 0px;">
               												<div class="_3H61R" style="border-radius: 0px;"></div>
               												<img src="{{manga['image']}}" alt="" class="hGq41 _2NsiO">
               											</div>
               										</a>
               										<div class="_2wzxV">
-              											<a href="#" data-test="latest-update-name" class="_2dU-m _21knv">{{manga['title']}}</a>
+              											<a href="{{url_for('manga_id', manga_id = manga['id'])}}" data-test="latest-update-name" class="_2dU-m _21knv">{{manga['title']}}</a>
               											<!-- <div class="_8MJIu">1 new chapter</div> -->
               										</div>
               									</div>
@@ -453,7 +453,7 @@
 												    <div class="col-sm-2 ikcDo _2t82X">
 															{% for x in range(0,3) %}
 												          {% if latest_manga_releases_chapter_list[latest_mange_releases.index(manga)] %}
-												            {{latest_manga_releases_chapter_list[latest_mange_releases.index(manga)]['chapter_time_uploaded'][x]}}<br>
+												            {{latest_manga_releases_chapter_list[latest_mange_releases.index(manga)]['chapter_time_uploaded'][x]}}<br><br>
 												          {% endif %}
 															{% endfor %}
 										       	</div>
